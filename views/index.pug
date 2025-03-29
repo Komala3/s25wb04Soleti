@@ -1,5 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container.mt-5
+    h1.display-4= title
+    p.lead.mb-4 Welcome to #{title}
+
+    button.btn.btn-primary.mb-3(
+      type="button"
+      onclick="faster()"
+    ) Click Me!
+
+    #faster.alert.alert-info
+      | Initial content
+    script.
+      let value = 1;
+      let amt = 2;
+      function faster() {
+        amt *= 2;
+        value += amt;
+        document.getElementById('faster').innerHTML = `
+          <strong>Result:</strong> ${value} (${amt}x multiplier)
+        `;
+      }
+
+     
+
