@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to the Drones search results page.
+
+  table
+    thead
+      tr
+        th Model
+        th Range (km)
+        th Brand
+    tbody
+      each drone in drones
+        tr
+          td= drone.model
+          td= drone.range_km
+          td= drone.brand
