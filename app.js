@@ -24,6 +24,14 @@ app.use('/users', usersRouter);
 
 var dronesRouter = require('./routes/drones');
 app.use('/drones', dronesRouter);
+app.get('/drones', function(req, res) {
+  const drones = [
+    { model: 'DJI Phantom 4', range: 5, brand: 'DJI' },
+    { model: 'Parrot Anafi', range: 4, brand: 'Parrot' },
+    { model: 'Autel Evo II', range: 9, brand: 'Autel' }
+  ];
+  res.render('drones', { title: 'Search Results - Drones', results: drones });
+});
 
 
 // catch 404 and forward to error handler

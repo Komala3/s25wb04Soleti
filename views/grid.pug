@@ -1,0 +1,9 @@
+app.get('/grid', function(req, res) {
+  let rows = Number(req.query.rows);
+  let cols = Number(req.query.cols);
+  if (Number.isInteger(rows) && Number.isInteger(cols) && rows >= 3 && cols >= 3) {
+    res.render('grid', { title: 'Grid Display', rows, cols });
+  } else {
+    res.send('Invalid query parameters.');
+  }
+});
